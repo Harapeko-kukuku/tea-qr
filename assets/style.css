@@ -1,128 +1,109 @@
-html, body { height: 100%; }
+/* assets/style.css */
 
+/* ベース */
+html, body {
+  height: 100%;
+}
 body{
   margin:0;
-  font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif;
-  color:#2a1f18;
-
-  /* 背景画像：リポジトリ直下の bg-999.jpg を使う */
-  background-image:url("../bg-999.jpg");
-  background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
-
-  position:relative;
+  font-family: "Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif;
+  color: rgba(45,30,20,0.92);
+  background-image: url("./bg-999.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-/* 写真に膜＋ぼかし（料亭感の要） */
+/* うっすら暗幕＋ぼかし（高級感） */
 body::before{
   content:"";
-  position:fixed;
-  inset:0;
-  background:rgba(250,246,238,0.58);
-  backdrop-filter:blur(3px);
-  -webkit-backdrop-filter:blur(3px);
-  pointer-events:none;
+  position: fixed;
+  inset: 0;
+  background: rgba(20,18,16,0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  pointer-events: none;
 }
 
-/* 中央寄せ */
+/* 中央カード */
 .container{
-  position:relative;
-  max-width:560px;
-  margin:0 auto;
-  padding:56px 16px 80px;
-}
-
-/* ガラスカード */
-.card{
-  background:rgba(255,255,255,0.62);
-  border:1px solid rgba(60,40,25,0.10);
-  border-radius:22px;
-  padding:28px 22px;
-
+  position: relative;
+  max-width: 620px;
+  margin: 56px auto;
+  padding: 44px 34px;
+  border-radius: 26px;
+  background: rgba(255,248,238,0.78);
   box-shadow:
-    0 26px 70px rgba(0,0,0,0.20),
-    0 2px 12px rgba(0,0,0,0.08);
+    0 26px 70px rgba(0,0,0,0.45),
+    0 1px 0 rgba(255,255,255,0.35) inset;
+  border: 1px solid rgba(255,255,255,0.35);
 }
 
-/* ★タイトル：iPhoneで勝手に切られないように「縮む＋改行禁止」 */
-.title{
-  margin:0 0 18px;
-  font-weight:500;
-  letter-spacing:0.08em;
-  color:rgba(45,30,20,0.92);
-
-  font-size:clamp(22px, 6vw, 30px);
-  white-space:nowrap;
+/* タイトル */
+h1{
+  margin: 0 0 26px;
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
 }
-
-/* 戻る */
-.back{
-  display:inline-block;
-  margin:0 0 10px;
-  text-decoration:none;
-  color:rgba(60,35,20,0.70);
-  font-size:14px;
-}
-.back:hover{ opacity:0.85; }
 
 /* メニュー */
 .menu{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:grid;
-  gap:10px;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
 }
 
+/* リンクを「料亭のメニュー札」っぽく */
 .menu a{
-  display:block;
-  text-decoration:none;
-  color:rgba(60,35,20,0.92);
-
-  font-size:clamp(18px, 5.3vw, 22px);
-  letter-spacing:0.06em;
-  line-height:1.7;
-
-  padding:12px 12px;
-  border-radius:14px;
-  transition:transform .08s ease, background .18s ease, opacity .18s ease;
+  display: block;
+  padding: 16px 18px;
+  border-radius: 16px;
+  text-decoration: none;
+  color: rgba(60,35,20,0.92);
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  background: rgba(255,255,255,0.35);
+  border: 1px solid rgba(120,85,60,0.18);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+  transition: transform .12s ease, opacity .12s ease;
 }
-.menu a:hover{
-  background:rgba(255,255,255,0.35);
-  transform:translateY(-1px);
-}
+
 .menu a:active{
-  transform:translateY(0px);
-  opacity:0.9;
+  transform: translateY(1px);
+  opacity: 0.95;
 }
 
-.desc{
-  margin:0 0 14px;
-  color:rgba(60,35,20,0.75);
-  font-size:15px;
-  line-height:1.8;
-}
-
+/* 詳細ページ用 */
 .meta{
-  display:grid;
-  gap:8px;
-  margin-top:6px;
+  margin-top: 22px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(55,35,25,0.86);
 }
 
-.label{
+.back{
   display:inline-block;
-  width:3.5em;
-  color:rgba(60,35,20,0.55);
-  letter-spacing:0.05em;
-  font-size:14px;
-}
-.value{
-  color:rgba(45,30,20,0.90);
-  font-size:16px;
+  margin-bottom: 18px;
+  text-decoration:none;
+  color: rgba(60,35,20,0.80);
+  font-size: 16px;
 }
 
-@media (max-width:420px){
-  .container{ padding:44px 14px 70px; }
-  .card{ padding:24px 18px; }
+.back:active{ opacity:.75; }
+
+/* スマホ最適化 */
+@media (max-width: 480px){
+  body{ background-attachment: scroll; }
+  .container{
+    margin: 28px 16px;
+    padding: 34px 22px;
+    border-radius: 22px;
+  }
+  h1{ font-size: 30px; }
+  .menu a{ font-size: 22px; padding: 14px 16px; }
 }
