@@ -1,23 +1,63 @@
-<!doctype html>
-<html lang="ja">
+/* ===== base ===== */
 
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tea Menu</title>
+body {
+margin: 0;
+background: #f5f3ef;
+color: #3a2416;
+font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
 
-<link rel="stylesheet" href="assets/style.css">
-</head>
+/* ===== layout ===== */
 
-<body>
+.wrap {
+max-width: 640px;
+margin: 0 auto;
+padding: 80px 28px 120px;
+}
 
-<h1>お茶を選んでください</h1>
+/* ===== title ===== */
 
-<p><a href="tea.html?type=gyokuro&lang=ja">玉露</a></p>
-<p><a href="tea.html?type=sencha&lang=ja">煎茶</a></p>
-<p><a href="tea.html?type=hojicha&lang=ja">ほうじ茶</a></p>
-<p><a href="tea.html?type=azuki&lang=ja">あずきほうじ茶</a></p>
-<p><a href="tea.html?type=teabag&lang=ja">ティーパック</a></p>
+h1 {
+font-size: 34px;
+font-weight: 500;
+letter-spacing: 0.08em;
+margin: 0 0 70px;
+}
 
-</body>
-</html>
+/* ===== menu links ===== */
+
+.menu {
+display: flex;
+flex-direction: column;
+gap: 30px;
+}
+
+.menu a {
+text-decoration: none;
+color: #4b2a16;
+font-size: 34px;
+line-height: 1.5;
+transition: opacity .2s;
+}
+
+.menu a:hover {
+opacity: 0.55;
+}
+
+/* ===== smartphone ===== */
+
+@media (max-width: 600px) {
+
+.wrap {
+padding: 60px 22px 90px;
+}
+
+h1 {
+font-size: 28px;
+margin-bottom: 50px;
+}
+
+.menu a {
+font-size: 30px;
+}
+}
