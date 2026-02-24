@@ -1,126 +1,24 @@
-/* assets/style.css */
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tea Menu</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>お茶を選んでください</h1>
 
-/* ===== base ===== */
-html, body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif;
-  color: #2a1f18;
-
-  /* ★ここが重要：CSSはassets内なので、1つ上(ルート)のbg-999.jpgを参照 */
-  background-image: url("../bg-999.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-
-  /* 画像が暗い/明るい両方でも上品に見えるよう薄い膜 */
-  position: relative;
-}
-
-body::before{
-  content:"";
-  position: fixed;
-  inset: 0;
-  background: rgba(250, 246, 238, 0.55);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  pointer-events: none;
-}
-
-/* ===== layout ===== */
-.container{
-  position: relative;
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 56px 18px 80px;
-}
-
-.card{
-  background: rgba(255, 255, 255, 0.55);
-  border: 1px solid rgba(60, 40, 25, 0.08);
-  border-radius: 22px;
-  padding: 34px 28px;
-
-  box-shadow:
-    0 22px 60px rgba(0,0,0,0.18),
-    0 2px 10px rgba(0,0,0,0.06);
-}
-
-h1{
-  margin: 0 0 26px;
-  font-size: 34px;
-  letter-spacing: 0.06em;
-  font-weight: 500;
-  color: rgba(45, 30, 20, 0.92);
-}
-
-/* ===== menu links ===== */
-.menu{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 12px;
-}
-
-.menu a{
-  display: block;
-  text-decoration: none;
-  color: rgba(60, 35, 20, 0.92);
-  font-size: 26px;
-  letter-spacing: 0.04em;
-  padding: 14px 14px;
-  border-radius: 14px;
-  transition: transform .08s ease, background .18s ease, opacity .18s ease;
-}
-
-.menu a:hover{
-  background: rgba(255,255,255,0.35);
-  transform: translateY(-1px);
-}
-
-.menu a:active{
-  transform: translateY(0px);
-  opacity: 0.9;
-}
-
-/* ===== back link ===== */
-.back{
-  display: inline-block;
-  margin-bottom: 18px;
-  text-decoration: none;
-  color: rgba(60, 35, 20, 0.75);
-  font-size: 16px;
-}
-
-.back:hover{ opacity: 0.85; }
-
-/* ===== tea detail ===== */
-.lead{
-  margin: 0 0 16px;
-  font-size: 16px;
-  line-height: 1.9;
-  color: rgba(60, 35, 20, 0.78);
-}
-
-.meta{
-  margin-top: 14px;
-  display: grid;
-  gap: 8px;
-  font-size: 18px;
-  color: rgba(45, 30, 20, 0.86);
-}
-
-.meta b{
-  font-weight: 600;
-}
-
-/* ===== small screen ===== */
-@media (max-width: 420px){
-  h1{ font-size: 28px; }
-  .menu a{ font-size: 22px; }
-  .card{ padding: 28px 20px; border-radius: 18px; }
-}
+      <ul class="menu">
+        <li><a href="tea.html?type=gyokuro&lang=ja">玉露</a></li>
+        <li><a href="tea.html?type=sencha&lang=ja">煎茶</a></li>
+        <li><a href="tea.html?type=hojicha&lang=ja">ほうじ茶</a></li>
+        <li><a href="tea.html?type=azuki&lang=ja">あずきほうじ茶</a></li>
+        <li><a href="tea.html?type=teabag&lang=ja">ティーパック</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
