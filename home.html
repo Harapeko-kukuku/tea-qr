@@ -1,110 +1,27 @@
-/* assets/style.css */
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tea Menu</title>
 
-html, body { height: 100%; }
+  <!-- ★キャッシュ破壊：v=999 を毎回変えると確実 -->
+  <link rel="stylesheet" href="assets/style.css?v=999">
+</head>
 
-body{
-  margin:0;
-  font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif;
-  color:#2a1f18;
+<body class="bg-999">
+  <div class="container">
+    <div class="card">
+      <h1 class="title">お茶を選んでください</h1>
 
-  background-image:url("../bg-999.jpg");
-  background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
-
-  position:relative;
-}
-
-/* うっすら膜（写真を上品にする） */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:rgba(250,246,238,0.58);
-  backdrop-filter:blur(3px);
-  -webkit-backdrop-filter:blur(3px);
-  pointer-events:none;
-}
-
-/* レイアウト */
-.container{
-  position:relative;
-  max-width:560px;              /* ←カードを少し締める */
-  margin:0 auto;
-  padding:56px 18px 80px;
-}
-
-.card{
-  background:rgba(255,255,255,0.62);
-  border:1px solid rgba(60,40,25,0.10);
-  border-radius:22px;
-  padding:28px 24px;
-
-  box-shadow:
-    0 26px 70px rgba(0,0,0,0.20),
-    0 2px 12px rgba(0,0,0,0.08);
-}
-
-/* タイトル：改行させない（ここが最重要） */
-h1{
-  margin:0 0 18px;
-  font-size:28px;
-  font-weight:500;
-  letter-spacing:0.08em;
-  color:rgba(45,30,20,0.92);
-
-  white-space:nowrap;           /* ←改行禁止 */
-  overflow:hidden;
-  text-overflow:ellipsis;       /* もし無理なら…で省略 */
-}
-
-/* メニュー */
-.menu{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:grid;
-  gap:10px;
-}
-
-.menu a{
-  display:block;
-  text-decoration:none;
-  color:rgba(60,35,20,0.92);
-
-  font-size:22px;               /* ←少し小さくして高級感 */
-  letter-spacing:0.06em;
-  line-height:1.7;
-
-  padding:12px 12px;
-  border-radius:14px;
-  transition:transform .08s ease, background .18s ease, opacity .18s ease;
-}
-
-.menu a:hover{
-  background:rgba(255,255,255,0.35);
-  transform:translateY(-1px);
-}
-
-.menu a:active{
-  transform:translateY(0px);
-  opacity:0.9;
-}
-
-/* 戻るリンク等（今後用） */
-.back{
-  display:inline-block;
-  margin-bottom:14px;
-  text-decoration:none;
-  color:rgba(60,35,20,0.75);
-  font-size:14px;
-}
-.back:hover{ opacity:0.85; }
-
-/* スマホ最適化 */
-@media (max-width:420px){
-  .container{ padding:44px 14px 70px; }
-  .card{ padding:24px 18px; }
-  h1{ font-size:26px; }
-  .menu a{ font-size:21px; }
-}
+      <ul class="menu">
+        <li><a href="tea.html?type=gyokuro&lang=ja">玉露</a></li>
+        <li><a href="tea.html?type=sencha&lang=ja">煎茶</a></li>
+        <li><a href="tea.html?type=hojicha&lang=ja">ほうじ茶</a></li>
+        <li><a href="tea.html?type=azuki&lang=ja">あずきほうじ茶</a></li>
+        <li><a href="tea.html?type=teabag&lang=ja">ティーパック</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
