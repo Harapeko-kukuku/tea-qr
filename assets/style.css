@@ -1,53 +1,23 @@
-body {
-  font-family: "Hiragino Mincho ProN", serif;
-  background:#f7f6f2;
-  color:#2b2b2b;
-  max-width:600px;
-  margin:40px auto;
-  line-height:1.9;
-  padding:0 20px;
-}
+<!doctype html>
+<html lang="ja">
 
-h1 {
-  font-size:28px;
-  margin-bottom:30px;
-  font-weight:500;
-}
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tea Menu</title>
 
-a {
-  color:#4a2e1f;
-  text-decoration:none;
-}
+<link rel="stylesheet" href="assets/style.css">
+</head>
 
-a:hover {
-  opacity:0.7;
-}
+<body>
 
-p {
-  margin:14px 0;
-  font-size:18px;
-}
+<h1>お茶を選んでください</h1>
 
-#description {
-  margin-bottom:30px;
-}
+<p><a href="tea.html?type=gyokuro&lang=ja">玉露</a></p>
+<p><a href="tea.html?type=sencha&lang=ja">煎茶</a></p>
+<p><a href="tea.html?type=hojicha&lang=ja">ほうじ茶</a></p>
+<p><a href="tea.html?type=azuki&lang=ja">あずきほうじ茶</a></p>
+<p><a href="tea.html?type=teabag&lang=ja">ティーパック</a></p>
 
-h1 {
-  font-size: 36px;
-  font-weight: 500;
-  margin-bottom: 50px;
-  letter-spacing: 0.05em;
-}
-
-a {
-  display: inline-block;
-  padding: 8px 0;
-  font-size: 32px;
-  line-height: 1.8;
-  text-decoration: none;
-  transition: opacity .2s;
-}
-
-a:hover {
-  opacity: 0.5;
-}
+</body>
+</html>
