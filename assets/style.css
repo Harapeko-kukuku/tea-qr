@@ -1,24 +1,128 @@
-<!doctype html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tea Menu</title>
-  <link rel="stylesheet" href="assets/style.css" />
-</head>
-<body>
-  <div class="container">
-    <div class="card">
-      <h1>お茶を選んでください</h1>
+html, body { height: 100%; }
 
-      <ul class="menu">
-        <li><a href="tea.html?type=gyokuro&lang=ja">玉露</a></li>
-        <li><a href="tea.html?type=sencha&lang=ja">煎茶</a></li>
-        <li><a href="tea.html?type=hojicha&lang=ja">ほうじ茶</a></li>
-        <li><a href="tea.html?type=azuki&lang=ja">あずきほうじ茶</a></li>
-        <li><a href="tea.html?type=teabag&lang=ja">ティーパック</a></li>
-      </ul>
-    </div>
-  </div>
-</body>
-</html>
+body{
+  margin:0;
+  font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif;
+  color:#2a1f18;
+
+  /* 背景画像：リポジトリ直下の bg-999.jpg を使う */
+  background-image:url("../bg-999.jpg");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+
+  position:relative;
+}
+
+/* 写真に膜＋ぼかし（料亭感の要） */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(250,246,238,0.58);
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
+  pointer-events:none;
+}
+
+/* 中央寄せ */
+.container{
+  position:relative;
+  max-width:560px;
+  margin:0 auto;
+  padding:56px 16px 80px;
+}
+
+/* ガラスカード */
+.card{
+  background:rgba(255,255,255,0.62);
+  border:1px solid rgba(60,40,25,0.10);
+  border-radius:22px;
+  padding:28px 22px;
+
+  box-shadow:
+    0 26px 70px rgba(0,0,0,0.20),
+    0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* ★タイトル：iPhoneで勝手に切られないように「縮む＋改行禁止」 */
+.title{
+  margin:0 0 18px;
+  font-weight:500;
+  letter-spacing:0.08em;
+  color:rgba(45,30,20,0.92);
+
+  font-size:clamp(22px, 6vw, 30px);
+  white-space:nowrap;
+}
+
+/* 戻る */
+.back{
+  display:inline-block;
+  margin:0 0 10px;
+  text-decoration:none;
+  color:rgba(60,35,20,0.70);
+  font-size:14px;
+}
+.back:hover{ opacity:0.85; }
+
+/* メニュー */
+.menu{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:10px;
+}
+
+.menu a{
+  display:block;
+  text-decoration:none;
+  color:rgba(60,35,20,0.92);
+
+  font-size:clamp(18px, 5.3vw, 22px);
+  letter-spacing:0.06em;
+  line-height:1.7;
+
+  padding:12px 12px;
+  border-radius:14px;
+  transition:transform .08s ease, background .18s ease, opacity .18s ease;
+}
+.menu a:hover{
+  background:rgba(255,255,255,0.35);
+  transform:translateY(-1px);
+}
+.menu a:active{
+  transform:translateY(0px);
+  opacity:0.9;
+}
+
+.desc{
+  margin:0 0 14px;
+  color:rgba(60,35,20,0.75);
+  font-size:15px;
+  line-height:1.8;
+}
+
+.meta{
+  display:grid;
+  gap:8px;
+  margin-top:6px;
+}
+
+.label{
+  display:inline-block;
+  width:3.5em;
+  color:rgba(60,35,20,0.55);
+  letter-spacing:0.05em;
+  font-size:14px;
+}
+.value{
+  color:rgba(45,30,20,0.90);
+  font-size:16px;
+}
+
+@media (max-width:420px){
+  .container{ padding:44px 14px 70px; }
+  .card{ padding:24px 18px; }
+}
