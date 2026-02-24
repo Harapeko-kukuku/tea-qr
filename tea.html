@@ -1,36 +1,45 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>tea</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tea</title>
+
+  <!-- ★キャッシュ破壊 -->
+  <link rel="stylesheet" href="assets/style.css?v=999">
 </head>
 
-<body style="font-family:serif;max-width:600px;margin:40px auto;line-height:1.8;">
+<body class="bg-999">
+  <div class="container">
+    <div class="card">
+      <a class="back" href="home.html?lang=ja">← 戻る</a>
 
-<a href="home.html">← 戻る</a>
+      <h1 id="name" class="title"></h1>
+      <p id="description" class="desc"></p>
 
-<h1 id="name"></h1>
-<p id="description"></p>
+      <div class="meta">
+        <div><span class="label">温度</span><span id="temperature" class="value"></span></div>
+        <div><span class="label">時間</span><span id="time" class="value"></span></div>
+      </div>
+    </div>
+  </div>
 
-<p>
-温度：<span id="temperature"></span><br>
-時間：<span id="time"></span>
-</p>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const type = params.get("type") || "gyokuro";
 
-<script>
-const params = new URLSearchParams(location.search);
-const type = params.get("type");
-
-fetch("data/" + type + ".json")
-  .then(r => r.json())
-  .then(d => {
-    document.getElementById("name").textContent = d.name || "";
-    document.getElementById("description").textContent = d.description || "";
-    document.getElementById("temperature").textContent = d.temperature || "";
-    document.getElementById("time").textContent = d.time || "";
-  });
-</script>
-
+    fetch("data/" + type + ".json")
+      .then(r => r.json())
+      .then(d => {
+        document.getElementById("name").textContent = d.name || "";
+        document.getElementById("description").textContent = d.description || "";
+        document.getElementById("temperature").textContent = d.temperature || "";
+        document.getElementById("time").textContent = d.time || "";
+      })
+      .catch(() => {
+        document.getElementById("name").textContent = "読み込みエラー";
+        document.getElementById("description").textContent = "data/" + type + ".json が見つからないか、形式が違います。";
+      });
+  </script>
 </body>
 </html>
