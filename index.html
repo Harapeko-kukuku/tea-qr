@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>〈kukuku〉</title>
+</head>
+
+<body style="text-align:center;font-family:serif;margin-top:100px;">
+<h1>〈kukuku〉</h1>
+<p>Preparing your tea experience…</p>
+
+<script>
+function detectLang() {
+  const langs = navigator.languages || [navigator.language];
+  const s = langs.join(",").toLowerCase();
+
+  if (s.includes("ja")) return "ja";
+  if (s.includes("ko")) return "ko";
+  if (s.includes("zh")) return "zh";
+  return "en";
+}
+
+const lang = detectLang();
+
+setTimeout(() => {
+  location.replace("home.html?lang=" + lang);
+}, 300);
+</script>
+
+</body>
+</html>

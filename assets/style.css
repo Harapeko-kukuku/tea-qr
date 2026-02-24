@@ -1,0 +1,54 @@
+body{
+  margin:0;
+  font-family:serif;
+  background:#fff;
+  color:#111;
+  line-height:1.9;
+}
+
+/* 共通 */
+h1{
+  font-weight:400;
+  letter-spacing:0.05em;
+}
+
+h2{
+  margin-top:30px;
+  font-size:20px;
+}
+
+/* 茶ごとのテーマ */
+
+body[data-tea="gyokuro"]{
+  background:#fbfbfa;
+}
+
+body[data-tea="sencha"]{
+  background:#fbfcfb;
+}
+
+body[data-tea="hojicha"]{
+  background:#fcfbfa;
+}
+
+body[data-tea="azuki-hojicha"]{
+  background:#fcfbfb;
+}
+
+/* 言語別フォント */
+
+html[lang="ja"]{
+  font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
+}
+
+html[lang="en"]{
+  font-family:Georgia,serif;
+}
+
+html[lang="zh"]{
+  font-family:"Songti SC",serif;
+}
+
+html[lang="ko"]{
+  font-family:"AppleMyungjo",serif;
+}
