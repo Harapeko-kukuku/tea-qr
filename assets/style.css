@@ -31,3 +31,23 @@ p {
 #description {
   margin-bottom:30px;
 }
+
+h1 {
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 50px;
+  letter-spacing: 0.05em;
+}
+
+a {
+  display: inline-block;
+  padding: 8px 0;
+  font-size: 32px;
+  line-height: 1.8;
+  text-decoration: none;
+  transition: opacity .2s;
+}
+
+a:hover {
+  opacity: 0.5;
+}
