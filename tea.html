@@ -1,47 +1,36 @@
-<!doctype html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tea</title>
-<link rel="stylesheet" href="assets/style.css">
-</head>
-
-<body>
-
-<div class="container">
-<div class="card">
-
-<a href="home.html?lang=ja" class="back">← 戻る</a>
-
-<h1 id="title"></h1>
-
-<div class="meta">
-<div>温度：<span id="temp"></span></div>
-<div>時間：<span id="time"></span></div>
-</div>
-
-<div id="text" style="white-space:pre-wrap; margin-top:22px; line-height:1.9;"></div>
-
-</div>
-</div>
-
-<script>
-const params = new URLSearchParams(location.search);
-const tea = params.get("tea");
-
-fetch(`data/${tea}.json`)
-.then(r => r.json())
-.then(d => {
-document.getElementById("title").textContent = d.name || "";
-document.getElementById("temp").textContent = d.temperature || "";
-document.getElementById("time").textContent = d.time || "";
-document.getElementById("text").textContent = d.text || "";
-})
-.catch(()=>{
-document.getElementById("title").textContent="データが見つかりません";
-});
-</script>
-
-</body>
-</html>
+{
+  "title": "玉露",
+  "summary": "玉露は繊細で高品質なお茶です。丁寧に淹れることで、旨味や甘みを最大限に楽しむことができます。以下は美味しく淹れる基本的な方法です。",
+  "temp": "40〜50℃",
+  "time": "2分〜2分30秒",
+  "body": [
+    "■ お湯の準備",
+    "玉露は低温で淹れるのがポイントです。",
+    "約40〜50℃のお湯を用意します。",
+    "※ 熱湯を一旦湯呑みに注ぎ、約1分ほど待つと適温になります。",
+    "",
+    "■ 茶葉の量",
+    "1杯あたり3g（小さじ1杯程度）を急須に入れます。",
+    "",
+    "■ お湯を注ぐ",
+    "冷ましたお湯を注ぎます（1杯約30ml）。",
+    "",
+    "■ 抽出",
+    "約2分〜2分30秒ほど、じっくり待ちます。",
+    "この間に茶葉がゆっくりと旨味を引き出します。",
+    "",
+    "■ 注ぎ方",
+    "最後の一滴まで注ぎ切るのがポイントです。",
+    "",
+    "■ 二煎目以降",
+    "・二煎目： 約70℃ / 約30秒",
+    "・三煎目： 熱湯 / 1秒",
+    "それぞれ異なる味わいが楽しめます。",
+    "",
+    "■ 茶葉も最後まで",
+    "淹れ終わった茶葉は、醤油やポン酢を少し垂らして",
+    "「おひたし」としても美味しくいただけます。",
+    "",
+    "ぜひ、ゆっくりとした時間をお楽しみください。"
+  ]
+}
