@@ -1,52 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tea</title>
-<link rel="stylesheet" href="assets/style.css">
+
+<style>
+body{
+  margin:0;
+  font-family: serif;
+  background:url("assets/bg-999.jpg") center/cover fixed;
+}
+
+.wrap{
+  max-width:760px;
+  margin:40px auto;
+  background:rgba(245,235,225,0.92);
+  border-radius:28px;
+  padding:40px;
+}
+
+.back{
+  font-size:32px;
+  margin-bottom:30px;
+  display:inline-block;
+  text-decoration:none;
+  color:#4a2f20;
+}
+
+h1{
+  font-size:64px;
+  margin:20px 0 30px;
+}
+
+p{
+  font-size:34px;
+  line-height:1.8;
+  margin:18px 0;
+}
+</style>
 </head>
 
 <body>
 
-<div class="container">
-  <div class="card">
-    <a href="home.html?lang=ja" class="back">← 戻る</a>
+<div class="wrap">
+<a class="back" href="index.html">← 戻る</a>
 
-    <h1 id="title"></h1>
-    <p id="summary"></p>
+<h1 id="title"></h1>
+<div id="content"></div>
 
-    <p id="temp"></p>
-    <p id="time"></p>
-
-    <div id="body"></div>
-  </div>
 </div>
 
 <script>
 const params = new URLSearchParams(location.search);
 const tea = params.get("tea");
 
-fetch("data/" + tea + ".json")
-.then(r => r.json())
-.then(d => {
+if(!tea){
+  document.getElementById("content").innerHTML="データがありません";
+}else{
 
-document.getElementById("title").textContent = d.title;
-document.getElementById("summary").textContent = d.summary;
-document.getElementById("temp").textContent = "温度：" + d.temp;
-document.getElementById("time").textContent = "時間：" + d.time;
-
-const body = document.getElementById("body");
-body.innerHTML = "";
-
-d.body.forEach(line=>{
-  const p=document.createElement("p");
-  p.textContent=line;
-  body.appendChild(p);
+fetch(`data/${tea}.html`)
+.then(r=>r.text())
+.then(text=>{
+document.getElementById("content").innerHTML=text;
+document.getElementById("title").innerText=tea;
+})
+.catch(()=>{
+document.getElementById("content").innerHTML="読み込みエラー";
 });
 
-});
+}
 </script>
 
 </body>
