@@ -2,24 +2,67 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tea</title>
+
+<style>
+body{
+  margin:0;
+  font-family: serif;
+  background:url("assets/bg-999.jpg") center/cover fixed;
+}
+
+.card{
+  max-width:760px;
+  margin:30px auto;
+  background:#f3ede6;
+  border-radius:30px;
+  padding:40px 28px;
+}
+
+h1{
+  font-size:40px;
+  margin:20px 0 30px;
+}
+
+p{
+  font-size:26px;
+  line-height:1.9;
+  margin:18px 0;
+}
+
+.back{
+  font-size:40px;
+  text-decoration:none;
+  color:#3a2a20;
+}
+</style>
 </head>
+
 <body>
 
-<div id="tea-content"></div>
+<div class="card">
+<a class="back" href="index.html">← 戻る</a>
+
+<h1 id="title"></h1>
+<p id="body"></p>
+
+</div>
 
 <script>
 const params = new URLSearchParams(location.search);
 const tea = params.get("tea");
 
-fetch(`data/${tea}.html`)
-  .then(res => res.text())
-  .then(html => {
-    document.getElementById("tea-content").innerHTML = html;
-  })
-  .catch(() => {
-    document.getElementById("tea-content").innerHTML = "データがありません";
-  });
+fetch("data/" + tea + ".json")
+.then(r=>r.json())
+.then(data=>{
+ document.getElementById("title").textContent = data.title;
+ document.getElementById("body").innerHTML =
+   data.body.join("<br><br>");
+})
+.catch(()=>{
+ document.getElementById("body").textContent="データがありません";
+});
 </script>
 
 </body>
