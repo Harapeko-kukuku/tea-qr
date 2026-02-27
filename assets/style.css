@@ -108,3 +108,23 @@ p, li{
     line-height: 1.7;
   }
 }
+
+/* ===== 全ページフォント統一 ===== */
+
+main{
+  font-size:0.75rem;
+}
+
+main p,
+main li{
+  font-size:0.75rem;
+  line-height:1.9;
+}
+
+h1{
+  font-size:2rem;
+}
+
+h2{
+  font-size:1.2rem;
+}
