@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>玉露 | 九九九</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+<main class="container">
+
+<a class="back" href="home.html">← 返回</a>
+
+<h1>玉露</h1>
+
+<p>
+玉露是细腻且高品质的日本茶。<br>
+通过细心冲泡，可以充分感受其鲜味与甘甜。<br>
+以下是基本冲泡方法。
+</p>
+
+<h2>■ 准备热水</h2>
+<p>
+玉露适合低温冲泡。<br>
+建议使用约40～50℃的热水。<br>
+可先把沸水倒入茶杯中，等待约1分钟降温。
+</p>
+
+<h2>■ 茶叶用量</h2>
+<p>
+每杯约3g（约1小匙）放入茶壶中。
+</p>
+
+<h2>■ 注水</h2>
+<p>
+倒入冷却后的热水（每杯约30ml）。
+</p>
+
+<h2>■ 浸泡</h2>
+<p>
+等待约2～2分30秒。<br>
+茶叶会慢慢释放鲜味。
+</p>
+
+<h2>■ 倒茶</h2>
+<p>
+请将最后一滴也倒出。
+</p>
+
+<h2>■ 第二、三泡</h2>
+<p>
+・第二泡：约70℃ / 约30秒<br>
+・第三泡：沸水 / 1秒
+</p>
+
+<h2>■ 茶叶也可享用</h2>
+<p>
+泡完的茶叶可加少量酱油或柚子醋，<br>
+作为凉拌小菜享用。
+</p>
+
+</main>
+</body>
+</html>
